@@ -1,0 +1,17 @@
+{
+  "name": "tellthat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@signalwire/realtime-api": "^3.10.2",
+    "commander": "^11.0.0",
+    "dotenv": "^16.3.1"
+  }
+}

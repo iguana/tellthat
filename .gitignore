@@ -1,0 +1,28 @@
+# Secrets
+*.env
+*.env.*
+*google-auth.json
+
+# Jetbrains
+.idea
+node_modules
+bigquery.json
+npm-debug.log
+common/*.js
+common/*/*.js
+common/*/*/*.js
+common/*.js.map
+tests/*.js
+tests/*.js.map
+routes/*.js
+routes/*.js.map
+/*.js.map
+/*.js.map/app-gae.yaml
+# VSCode
+*.rest
+*.code-workspace
+.nvmrc
+.node-version
+.dir-locals.el
+.DS_Store
+build/
