@@ -2,6 +2,8 @@
 
 Command Line tool to call someone and tell them something, and (optionally) get a confirmation.
 
+Requires a [SignalWire account](https://signalwire.com/).
+
 | Shell exit code | Meaning |
 | ---------- | ---- |
 | 0 | Confirmed |
@@ -25,3 +27,15 @@ Options:
   --verbose [boolean]             Verbose output (default: "true")
   -h, --help                      display help for command
   ```
+
+  ---
+
+## Setting up your SignalWire account to use this utility
+
+1. [Set up a SignalWire account](https://www.signalwire.com)
+2. [Purchase a phone number](https://YOUR_SPACE.signalwire.com/phone_numbers/new) - This will be used for your CallerID
+3. [Create a new API token](https://YOUR_SPACE.signalwire.com/credentials/auth_tokens/new)
+
+## Authentication:
+1. On the [home / dashboard screen](https://YOUR_SPACE.signalwire.com/dashboard) find the Project ID (looks like a UUID)
+2. Use the token you created in step (3) above
