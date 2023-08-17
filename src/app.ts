@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import { Command } from "commander";
 import { runTellThat, TellThatOptions } from "./tellthat";
 import * as dotenv from "dotenv";
@@ -19,13 +21,11 @@ const program = new Command();
 program
   .option('--csv [string]', 'CSV file to read')
   .option('--concurrency [number]', 'How many calls to make at once', '1')
-  .option('--to [string]', 'Phone number to dial', '+14083654354')
+  .option('--to [string]', 'Phone number to dial')
   .option('--from [string]', 'Caller ID', '+12068032583')
   .option('--pauseBeforeGreeting [number]', 'Seconds to wait before greeting', '3')
-  .option('--greeting [string]', 'What to say when call is answered',
-    'Hello, this is FreeSwitch Middle School')
-  .option('--tell [string]', 'What you want to tell', 
-    'Your child, Tony, was late today. Please confirm.')
+  .option('--greeting <string>', 'What to say when call is answered')
+  .option('--tell <string>', 'What you want to tell') 
   .option('--confirm [boolean]', 'Confirm the message', 
     'true')
   .option('--loops [number]', 'Attempts at confirmation', '1')
@@ -33,7 +33,7 @@ program
     'Thank you. Have a nice day!')
   .option('--timeout [number]', 'Seconds to wait until call is answered', '30')
   .option('--confirmStrings [string]', 'Comma-delimited list of strings that count as a confirmation', 
-    'yes,okay,sure')
+    'yes,okay,sure,yeah,uh huh,yep')
   .option('--verbose [boolean]', 'Verbose output', 'true')
   .action(async (options: TellThatCommand) => {
     if (options.verbose) {

@@ -1,4 +1,4 @@
-to,from,greeting,tell,thanks,pauseBeforeGreeting,confirm,loops,timeout,confirmStrings,verbose
-"+12068032583","+12066032583","Hello, this is a test call.","This is the main message.","Thank you for confirming.",5,true,3,30,"Yes,Okay,Confirmed",true
-"+12066472583","+12066032583","Hi, hope you're well.","Here's an update for you.","Thanks for listening.",2,false,1,15,"Sure,Yes",false
-"+12066562583","+12066032583","Hi, hope you're well.","Here's an update for you.","Thanks for listening.",2,false,1,15,"Sure,Yes",false
+to,from,greeting,tell,thanks,pauseBeforeGreeting,confirm,loops,timeout,confirmStrings
+"+12068032583","+12066032583","Hello, this is a test call.","This is the main message.","Thank you for confirming.",5,true,3,30,"Yes,Okay,Confirmed"
+"+12066472583","+12066032583","Hi, hope you're well.","Here's an update for you.","Thanks for listening.",2,false,1,15,"Sure,Yes"
+"+12066562583","+12066032583","Hi, hope you're well.","Here's an update for you.","Thanks for listening.",2,false,1,15,"Sure,Yes"

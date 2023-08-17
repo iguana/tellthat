@@ -1,5 +1,7 @@
 # Tell That
 
+*NOTE* This is a very early version, everything will change until version 1.0.0 is released
+
 Command Line tool to call someone and tell them something, and (optionally) get a confirmation.
 
 Requires a [SignalWire account](https://signalwire.com/).
@@ -14,6 +16,7 @@ Requires a [SignalWire account](https://signalwire.com/).
 Usage: tellthat
 
 Options:
+  --csv path/csvfile.csv          CSV File with numbers to call and what to say
   --to [string]                   Phone number to dial (default: "+14083654354")
   --from [string]                 Caller ID (default: "+12068032583")
   --pauseBeforeGreeting [number]  Seconds to wait before greeting (default: "3")
@@ -41,3 +44,9 @@ Options:
 ## Authentication:
 1. On the [home / dashboard screen](https://YOUR_SPACE.signalwire.com/dashboard) find the Project ID (looks like a UUID)
 2. Use the token you created in step (3) above
+3. Put the project ID and token into a new file `~/.tellthat.env`:
+
+```
+SW_PROJECT_ID=xxxx
+SW_TOKEN=xxxx
+```

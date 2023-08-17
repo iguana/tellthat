@@ -46,7 +46,7 @@ export async function runTellThat(options: TellThatOptions): Promise<TellResult>
           callLog(call, "Prompting for confirmation.");
         }
         const prompt = await call.promptTTS({
-          text: options.greeting + ' ' + options.tell,
+          text: `${options.greeting || ''} ${options.tell}`,
           speech: {
             endSilenceTimeout: 3
           }
