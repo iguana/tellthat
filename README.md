@@ -13,20 +13,26 @@ Requires a [SignalWire account](https://signalwire.com/).
 | 2 | Timeout or error |
 
 ```
-Usage: tellthat
+Usage: app [options]
 
 Options:
-  --csv path/csvfile.csv          CSV File with numbers to call and what to say
-  --to [string]                   Phone number to dial (default: "+14083654354")
+  --csv [string]                  CSV file to read
+  --concurrency [number]          How many calls to make at once (default: "1")
+  --to [string]                   Phone number to dial
   --from [string]                 Caller ID (default: "+12068032583")
-  --pauseBeforeGreeting [number]  Seconds to wait before greeting (default: "3")
-  --greeting [string]             What to say when call is answered (default: "Hello, this is FreeSwitch Middle School")
-  --tell [string]                 What you want to tell (default: "Your child, Tony, was late today. Please confirm.")
+  --pauseBeforeGreeting [number]  Seconds to wait before greeting (default:
+                                  "3")
+  --greeting <string>             What to say when call is answered
+  --tell <string>                 What you want to tell
   --confirm [boolean]             Confirm the message (default: "true")
   --loops [number]                Attempts at confirmation (default: "1")
-  --thanks [string]               What to say when confirmed (default: "Thank you. Have a nice day!")
-  --timeout [number]              Seconds to wait until call is answered (default: "30")
-  --confirmStrings [string]       Comma-delimited list of strings that count as a confirmation (default: "yes,okay,sure")
+  --thanks [string]               What to say when confirmed (default: "Thank
+                                  you. Have a nice day!")
+  --timeout [number]              Seconds to wait until call is answered
+                                  (default: "30")
+  --confirmStrings [string]       Comma-delimited list of strings that count as
+                                  a confirmation (default:
+                                  "yes,okay,sure,yeah,uh huh,yep")
   --verbose [boolean]             Verbose output (default: "true")
   -h, --help                      display help for command
   ```
