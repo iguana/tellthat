@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "tellthat": "./build/app.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +16,11 @@
   "dependencies": {
     "@signalwire/realtime-api": "^3.10.2",
     "commander": "^11.0.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "os": "^0.1.2",
+    "papaparse": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/papaparse": "^5.3.7"
   }
 }

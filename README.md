@@ -36,6 +36,8 @@ Options:
 2. [Purchase a phone number](https://YOUR_SPACE.signalwire.com/phone_numbers/new) - This will be used for your CallerID
 3. [Create a new API token](https://YOUR_SPACE.signalwire.com/credentials/auth_tokens/new)
 
+### Note: _You must purchase a phone number to use as the "from" CallerID number._
+
 ## Authentication:
 1. On the [home / dashboard screen](https://YOUR_SPACE.signalwire.com/dashboard) find the Project ID (looks like a UUID)
 2. Use the token you created in step (3) above

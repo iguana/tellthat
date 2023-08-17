@@ -1,22 +1,25 @@
 import { Voice } from "@signalwire/realtime-api";
-import * as dotenv from "dotenv";
-dotenv.config({ path: __dirname+"/../.env" });
 
 export interface TellThatOptions {
-  to: string;
-  from: string;
-  pauseBeforeGreeting: number;
-  greeting: string;
-  tell: string;
-  loops: number;
-  thanks: string;
-  timeout: number;
-  confirm: boolean;
-  confirmStrings: string;
-  verbose: boolean;
+  to: string; // +E.164 phone number (e.g. +14085551212)
+  from: string; // +E.164 phone number (e.g. +14085551212)
+  greeting: string; // what to say when call is answered
+  tell: string; // what to tell the person
+  thanks: string; // what to say when confirmed
+  pauseBeforeGreeting: number; // seconds
+  confirm: boolean; // whether to confirm the message
+  loops: number; // how many times to repeat the message until confirmed
+  timeout: number; // how long to wait until call is answered
+  confirmStrings: string; // comma-delimited list of strings that count as a confirmation
+  verbose: boolean; // verbose output
 }
 
-export async function runTellThat(options: TellThatOptions) {
+export interface TellResult {
+  error?: string;
+  confirmed: boolean;
+}
+
+export async function runTellThat(options: TellThatOptions): Promise<TellResult> {
   const client = new Voice.Client({
     project: process.env.SW_PROJECT_ID,
     token: process.env.SW_TOKEN || 'set token',
@@ -53,6 +56,7 @@ export async function runTellThat(options: TellThatOptions) {
           callLog(call, `Speech: ${speech}`);
         }
         if (matchAny(speech, options.confirmStrings)) {
+          callLog(call, `Got a confirmation.`);
           confirmed = true;
           loops = 0;
           const playThanks = await call.playTTS({ text: options.thanks });
@@ -76,13 +80,13 @@ export async function runTellThat(options: TellThatOptions) {
     }
     call.hangup();
     client.disconnect();
-    process.exit(confirmed ? 0 : 1);
-  } catch (e) {
+    return { confirmed };
+  } catch (e: any) {
     if (options.verbose) {
       console.error(e);
     }
     client.disconnect();
-    process.exit(2);
+    return { error: e.message, confirmed: false}
   }
 }
 
